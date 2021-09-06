@@ -1,0 +1,17 @@
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "stmt1528139563259",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "${account_number}"
+      },
+      "Action": [
+        "ses:SendEmail",
+        "ses:SendRawEmail"
+      ],
+      "Resource": ["${email_to_verify}"]
+    }
+  ]
+}
