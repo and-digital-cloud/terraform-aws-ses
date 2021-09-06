@@ -40,7 +40,7 @@ resource "aws_lambda_function" "function" {
   function_name = "${var.function_name}"
   handler       = "${var.function_name}.handler"
   role          = "${module.lambda_role.iam_role_arn[0]}"
-  runtime       = "nodejs8.10"
+  runtime       = "nodejs14.x"
   timeout       = "180"
 
   tags = "${var.tags}"
