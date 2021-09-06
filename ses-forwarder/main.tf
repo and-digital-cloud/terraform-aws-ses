@@ -72,8 +72,8 @@ resource "aws_lambda_function" "function" {
 
   environment {
     variables = {
-      FORWARD_FROM = "%s forwarded by test cloud ops <noreply@ops.test.co.uk>"
-      FORWARD_TO   = "test@test.co.uk"
+      FORWARD_FROM = "%s forwarded by lambda for <${join(",", var.sender)}>"
+      FORWARD_TO   = var.to_email
       S3_BUCKET    = aws_s3_bucket.bucket.id
     }
   }
@@ -85,7 +85,7 @@ resource "aws_lambda_function" "function" {
 # Bucket
 ###################
 resource "aws_s3_bucket" "bucket" {
-  bucket = "${local.module_name}-ops-email-store"
+  bucket = "${local.module_name}-${var.domain_name}-email-store"
   acl    = "private"
 
   server_side_encryption_configuration {
@@ -109,12 +109,12 @@ resource "aws_s3_bucket_policy" "lb_logs_access_policy" {
 ###################
 
 resource "aws_ses_domain_identity" "ses_domain" {
-  domain = "test.co.uk"
+  domain = var.domain_name
 }
 
 resource "aws_route53_record" "ses_domain_amazonses_verification_record" {
-  zone_id = "Z012999530AJXZL9KQZRL"
-  name    = "_amazonses.ops.test.co.uk"
+  zone_id = data.aws_route53_zone.hosted_zone.zone_id
+  name    = "_amazonses.${var.domain_name}"
   type    = "TXT"
   ttl     = "600"
   records = [aws_ses_domain_identity.ses_domain.verification_token]
@@ -147,7 +147,7 @@ resource "aws_ses_receipt_rule" "send_to_lambda_rule" {
     invocation_type = "Event"
   }
 
-  recipients = var.emails
+  recipients = var.sender
 }
 
 resource "aws_ses_active_receipt_rule_set" "main" {
@@ -161,13 +161,9 @@ resource "aws_ses_active_receipt_rule_set" "main" {
 ###################
 
 resource "aws_route53_record" "ses_receive" {
-  name    = "test.co.uk"
+  name    = var.domain_name
   type    = "MX"
   zone_id = data.aws_route53_zone.hosted_zone.zone_id
-  records = ["10 inbound-smtp.eu-west-1.amazonaws.com"]
+  records = ["10 inbound-smtp.${data.aws_region.current.name}.amazonaws.com"]
   ttl     = "600"
-}
-
-variable "emails" {
-  type = list(any)
 }

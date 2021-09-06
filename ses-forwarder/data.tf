@@ -1,7 +1,8 @@
 data "aws_caller_identity" "current" {}
+data "aws_region" "current" {}
 
 data "aws_route53_zone" "hosted_zone" {
-  name = "test.co.uk"
+  name = var.domain_name
 }
 
 data "aws_iam_policy_document" "lambda_execute_role" {
