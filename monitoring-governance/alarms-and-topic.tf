@@ -89,7 +89,7 @@ resource "aws_cloudwatch_metric_alarm" "complaint_alarm_02" {
   namespace           = "AWS/SES"
   statistic           = "Average"
   period              = 3600
-  threshold           = "0.2"
+  threshold           = "0.002"
   treat_missing_data  = "ignore"
 
   alarm_actions = ["${aws_sns_topic.alert_sns_topic.arn}"]
@@ -107,7 +107,7 @@ resource "aws_cloudwatch_metric_alarm" "complaint_alarm_03" {
   namespace           = "AWS/SES"
   statistic           = "Average"
   period              = 3600
-  threshold           = "0.3"
+  threshold           = "0.003"
   treat_missing_data  = "ignore"
 
   alarm_actions = ["${aws_sns_topic.alert_sns_topic.arn}"]
@@ -126,6 +126,7 @@ resource "aws_cloudwatch_metric_alarm" "complaint_alarm_04" {
   statistic           = "Average"
   period              = 3600
   threshold           = "0.4"
+  threshold           = "0.004"
   treat_missing_data  = "ignore"
 
   alarm_actions = ["${aws_sns_topic.suspend_alert_sns_topic.arn}"]
