@@ -1,5 +1,12 @@
 All notable changes to this terraform will be documented in this file.
 
+# [1.1.0](https://github.com/and-digital/terraform-aws-ses/compare/v1.0.3...v1.1.0) (2021-09-07)
+
+
+### Features
+
+* removing the old email forwarder terraform ([5ce724a](https://github.com/and-digital/terraform-aws-ses/commit/5ce724a4b5687d8a164690bfacaec365640f6669))
+
 ## [1.0.3](https://github.com/and-digital/terraform-aws-ses/compare/v1.0.2...v1.0.3) (2021-09-07)
 
 
