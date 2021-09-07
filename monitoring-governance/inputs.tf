@@ -7,13 +7,13 @@ variable "tags" {
 variable "aws_profile" {
   default     = ""
   type        = string
-  description = "value"
+  description = "AWS Profile"
 }
 
 variable "notification_email" {
   default     = ""
   type        = string
-  description = "value"
+  description = "See the attached email for a bounced message"
 }
 
 # variable "iam_path" {
