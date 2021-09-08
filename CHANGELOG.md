@@ -1,5 +1,12 @@
 All notable changes to this terraform will be documented in this file.
 
+# [1.2.0](https://github.com/and-digital/terraform-aws-ses/compare/v1.1.0...v1.2.0) (2021-09-08)
+
+
+### Features
+
+* updating complaint rate to 0.1% ([724c1ba](https://github.com/and-digital/terraform-aws-ses/commit/724c1ba7ea3fe956bfa47dc8e0aae906b0bbe42e))
+
 # [1.1.0](https://github.com/and-digital/terraform-aws-ses/compare/v1.0.3...v1.1.0) (2021-09-07)
 
 
