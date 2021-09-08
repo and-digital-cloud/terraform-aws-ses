@@ -94,7 +94,7 @@ resource "aws_cloudwatch_metric_alarm" "complaint_alarm_02" {
   namespace           = "AWS/SES"
   statistic           = "Average"
   period              = 3600
-  threshold           = "0.002"
+  threshold           = "0.001"
   treat_missing_data  = "ignore"
 
   alarm_actions = ["${aws_sns_topic.alert_sns_topic.arn}"]
