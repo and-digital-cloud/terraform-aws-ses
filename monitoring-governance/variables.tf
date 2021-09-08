@@ -17,9 +17,5 @@ variable "notification_email" {
 }
 
 
-# variable "iam_path" {
-#   default     = ""
-#   type        = string
-#   description = "value"
-# }
+variable "function_name" { default = "suspend_email_sending_lambda" }
 

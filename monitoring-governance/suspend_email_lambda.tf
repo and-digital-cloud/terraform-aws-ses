@@ -1,9 +1,9 @@
-variable "function_name" { default = "suspend_email_sending_lambda" }
+
 
 data "archive_file" "zip_file" {
   type        = "zip"
-  output_path = "${path.module}/lib/${var.function_name}.zip"
-  source_file = "${path.module}/lib/${var.function_name}.js"
+  output_path = "${local.archive_file_dir}/${var.function_name}.zip"
+  source_file = "${local.archive_file_dir}/${var.function_name}.js"
 }
 
 resource "aws_lambda_permission" "lambda_permission" {
@@ -46,7 +46,7 @@ EOF
 }
 
 resource "aws_lambda_function" "function" {
-  filename      = "${path.module}/lib/${var.function_name}.zip"
+  filename      = "${local.archive_file_dir}/${var.function_name}.zip"
   function_name = var.function_name
   handler       = "${var.function_name}.handler"
   role          = module.lambda_role.iam_role_arn[0]
