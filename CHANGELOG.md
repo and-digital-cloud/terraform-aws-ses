@@ -1,5 +1,13 @@
 All notable changes to this terraform will be documented in this file.
 
+# [1.3.0](https://github.com/and-digital/terraform-aws-ses/compare/v1.2.0...v1.3.0) (2021-09-10)
+
+
+### Features
+
+* adding private policy to s3 bucket ([c134713](https://github.com/and-digital/terraform-aws-ses/commit/c134713a6fe493ef4c4ef902049f73ce1ca130ce))
+* adding private policy to s3 bucket ([8f191a3](https://github.com/and-digital/terraform-aws-ses/commit/8f191a3efedfbaceb70c45ebbd28fc5409471ced))
+
 # [1.2.0](https://github.com/and-digital/terraform-aws-ses/compare/v1.1.0...v1.2.0) (2021-09-08)
 
 
