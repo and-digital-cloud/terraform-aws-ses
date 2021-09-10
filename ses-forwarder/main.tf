@@ -11,7 +11,7 @@ data "archive_file" "zip_file" {
 }
 
 ###################
-# Lambda
+# Lambda          
 ###################
 
 resource "aws_cloudwatch_log_group" "log_group" {
@@ -72,7 +72,7 @@ resource "aws_lambda_function" "function" {
 
   environment {
     variables = {
-      FORWARD_FROM = "%s forwarded by lambda for <${join(",", var.sender)}>"
+      FORWARD_FROM = "%s forwarded by lambda for <SES>"
       FORWARD_TO   = var.to_email
       S3_BUCKET    = aws_s3_bucket.bucket.id
     }
@@ -97,6 +97,14 @@ resource "aws_s3_bucket" "bucket" {
   }
 
   tags = var.tags
+}
+
+resource "aws_s3_bucket_public_access_block" "bucket" {
+  bucket = aws_s3_bucket.bucket.id
+  block_public_acls       = true
+  ignore_public_acls      = true
+  block_public_policy     = true
+  restrict_public_buckets = true
 }
 
 resource "aws_s3_bucket_policy" "lb_logs_access_policy" {

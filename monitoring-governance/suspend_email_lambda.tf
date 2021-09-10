@@ -1,8 +1,4 @@
-locals {
-  archive_file_dir = "${path.module}/lib/"
-}
 
-variable "function_name" { default = "suspend_email_sending_lambda" }
 
 data "archive_file" "zip_file" {
   type        = "zip"
@@ -21,9 +17,9 @@ module "lambda_role" {
   source = "github.com/barundel/terraform-aws-iam?ref=v1.0.1"
 
     create_role = true
-  role_name   = "${local.function_name}-Role"
+  role_name   = "${var.function_name}-Role"
 
-  role_description = "Permissions for the ${local.function_name} Lambda."
+  role_description = "Permissions for the ${var.function_name} Lambda."
 
   assume_role_policy = <<EOF
 {

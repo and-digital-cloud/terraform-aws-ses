@@ -85,9 +85,9 @@ resource "aws_cloudwatch_metric_alarm" "bounce_alarm_85" {
 }
 
 // Alarm to Notify when Complaint Rate hits 0.1%
-resource "aws_cloudwatch_metric_alarm" "complaint_alarm_02" {
-  alarm_name          = "email-complaint-0.2-percent"
-  alarm_description   = "notification for when the complaint rate hits 0.2%"
+resource "aws_cloudwatch_metric_alarm" "complaint_alarm_01" {
+  alarm_name          = "email-complaint-0.1-percent"
+  alarm_description   = "notification for when the complaint rate hits 0.1%"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 2
   metric_name         = "Reputation.ComplaintRate"

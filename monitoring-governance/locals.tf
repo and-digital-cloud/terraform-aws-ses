@@ -1,3 +1,3 @@
 locals {
-	function_name = ""
+  archive_file_dir = "${path.module}/lib/"
 }
