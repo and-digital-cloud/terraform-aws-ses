@@ -72,7 +72,7 @@ resource "aws_lambda_function" "function" {
 
   environment {
     variables = {
-      FORWARD_FROM = "%s forwarded by lambda for <${join(",", var.sender)}>"
+      FORWARD_FROM = "%s forwarded by lambda for <SES>"
       FORWARD_TO   = var.to_email
       S3_BUCKET    = aws_s3_bucket.bucket.id
     }
