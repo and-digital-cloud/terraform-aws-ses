@@ -31,13 +31,17 @@ module "ses_forwarder" {
 ```
 
 <!--- BEGIN_TF_DOCS --->
+## Providers
+
+No provider.
+
 ## Inputs
 
-No inputs.
+No input.
+
 ## Outputs
 
-No outputs.
-
+No output.
 <!--- END_TF_DOCS --->
 
 ## License
