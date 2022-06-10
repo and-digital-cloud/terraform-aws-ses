@@ -1,10 +1,9 @@
-formatter: "markdown table"
-section:
-  show:
-    - providers
-    - inputs
-    - outputs
+# formatter: "markdown table"
+# section:
+#   show:
+#     - inputs
+#     - outputs
 
-content: |-
-  {{ .Inputs }}
-  {{ .Outputs }}
+# content: |-
+#   {{ .Inputs }}
+#   {{ .Outputs }}
