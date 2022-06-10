@@ -24,6 +24,16 @@ jobs:
           tf_docs_output_method: inject
           tf_docs_git_push: 'true'
           tf_docs_git_commit_message: 'terraform-docs: automated action'
+      
+      - name: Render terraform docs examples inside the README.md and push changes back to PR branch
+        uses: terraform-docs/gh-actions@v0.11.0
+        with:
+          working-dir: .
+          output-file: README.md
+          config-file: .terraform-docs.yml
+          output-method: inject
+          git-push: 'true'
+          git-commit-message: 'terraform-docs: automated action'
   build:
     runs-on: ubuntu-latest
     steps:
