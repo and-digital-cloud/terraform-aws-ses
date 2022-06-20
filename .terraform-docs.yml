@@ -1,0 +1,21 @@
+formatter: "markdown table"
+section:
+  show:
+    - providers
+    - inputs
+    - outputs
+
+content: |-
+ 
+  Email Verification
+
+  {{ include "email-verification/README.md" }}
+   
+  SES Forwarder
+
+  {{ include "ses-forwarder/README.md" }}
+  
+  Verify Domain
+  
+  {{ include "verify-domain/README.md" }}
+   

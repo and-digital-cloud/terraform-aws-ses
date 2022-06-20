@@ -1,13 +1,18 @@
+# Usage
+<!--- BEGIN_TF_DOCS --->
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| aws | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
-| email\_to\_verify | n/a | `list(string)` | `[]` | no |
+| domain | n/a | `string` | `""` | no |
 
 ## Outputs
 
 No output.
+<!--- END_TF_DOCS --->
