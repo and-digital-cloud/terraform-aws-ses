@@ -6,19 +6,7 @@ section:
     - outputs
 
 content: |-
-  SES Forwarder
-
-module "ses_forwarder" {
-  source = "../../"
-
-  sender = ["email@digital.domain.com"]
-  to_email = "hello@domain.com"
-  domain_name = "digital.domain.com"
-  
-     tags = {
-    Name = "Email-Forwarder"
-  }
-
+ 
   Email Verification
 
   {{ include "email-verification/README.md" }}
@@ -28,6 +16,6 @@ module "ses_forwarder" {
   {{ include "ses-forwarder/README.md" }}
   
   Verify Domain
-
+  
   {{ include "verify-domain/README.md" }}
    
