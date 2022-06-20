@@ -25,15 +25,6 @@ jobs:
           tf_docs_git_push: 'true'
           tf_docs_git_commit_message: 'terraform-docs: automated action'
       
-      # - name: Render terraform docs examples inside the README.md and push changes back to PR branch
-      #   uses: terraform-docs/gh-actions@v0.11.0
-      #   with:
-      #     working-dir: .
-      #     output-file: README.md
-      #     config-file: .terraform-docs.yml
-      #     output-method: inject
-      #     git-push: 'true'
-      #     git-commit-message: 'terraform-docs: automated action'
   build:
     runs-on: ubuntu-latest
     steps:
@@ -44,9 +35,9 @@ jobs:
         id: semantic   # Need an `id` for output variables
         with:
           branch: master
-          semantic_version: 17.0.1
+          semantic_version: 19.0.3
           extra_plugins: |
-            @semantic-release/git
-            @semantic-release/changelog@3.0.0
+            @semantic-release/git@10.0.1
+            @semantic-release/changelog@6.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

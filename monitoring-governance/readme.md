@@ -1,3 +1,22 @@
-This module creates alarms for bounce and complaint rates and also a topic to send alerts to.
+# Usage
+<!--- BEGIN_TF_DOCS --->
+## Providers
 
-It also contains a lambda to suspend email sending should the rate reach a level of account suspension. 
+| Name | Version |
+|------|---------|
+| archive | n/a |
+| aws | n/a |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:-----:|
+| aws\_profile | AWS Profile | `string` | `""` | no |
+| function\_name | n/a | `string` | `"suspend_email_sending_lambda"` | no |
+| notification\_email | See the attached email for a bounced message | `string` | `""` | no |
+| tags | Map of tags to assign to resources. | `map(any)` | `{}` | no |
+
+## Outputs
+
+No output.
+<!--- END_TF_DOCS --->
