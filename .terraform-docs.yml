@@ -1,9 +1,23 @@
-# formatter: "markdown table"
-# section:
-#   show:
-#     - inputs
-#     - outputs
+formatter: "markdown table"
+section:
+  show:
+    - providers
+    - inputs
+    - outputs
 
-# content: |-
-#   {{ .Inputs }}
-#   {{ .Outputs }}
+content: |-
+  Email Verification
+  ```hcl
+  {{ include "email-verification/main.tf" }}
+  ``` 
+  SES Forwarder
+  ```hcl
+  {{ include "ses-forwarder/main.tf" }}
+  ``` 
+  Verify Domain
+  ```hcl
+  {{ include "verify-domain/main.tf" }}
+  ``` 
+  {{ .Providers }}
+  {{ .Inputs }}
+  {{ .Outputs }}

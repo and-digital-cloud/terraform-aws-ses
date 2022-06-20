@@ -13,7 +13,7 @@
 This project is maintained [AND Digital](https://github.com/and-digital), anyone is welcome to contribute.
 
 ## Getting Started
-
+<!--- BEGIN_TF_DOCS --->
 #### SES Forwarder
 
 ```
@@ -30,11 +30,10 @@ module "ses_forwarder" {
 
 ```
 
-<!--- BEGIN_TF_DOCS --->
+
 ## Providers
 
-No provider.
-
+No providers
 ## Inputs
 
 No input.
