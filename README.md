@@ -37,7 +37,9 @@ No provider.
 
 ## Inputs
 
-No input.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:-----:|
+| email\_to\_verify | n/a | `list(string)` | `[]` | no |
 
 ## Outputs
 
