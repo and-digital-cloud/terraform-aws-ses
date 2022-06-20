@@ -21,7 +21,7 @@ jobs:
         with:
           tf_docs_working_dir: .
           tf_docs_output_file: README.md
-          tf_docs_output_method: inject
+          tf_docs_output_method: replace
           tf_docs_git_push: 'true'
           tf_docs_git_commit_message: 'terraform-docs: automated action'
       

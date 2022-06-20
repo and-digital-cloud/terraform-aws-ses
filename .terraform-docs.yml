@@ -19,15 +19,15 @@ module "ses_forwarder" {
     Name = "Email-Forwarder"
   }
 
-    Email Verification
-  hcl
+  Email Verification
+
   {{ include "email-verification/README.md" }}
    
   SES Forwarder
-  hcl
+
   {{ include "ses-forwarder/README.md" }}
   
   Verify Domain
-  hcl
+
   {{ include "verify-domain/README.md" }}
    
