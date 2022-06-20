@@ -8,15 +8,15 @@ section:
 content: |-
   Email Verification
   ```hcl
-  {{ include "email-verification/main.tf" }}
+  {{ include "email-verification/README.md" }}
   ``` 
   SES Forwarder
   ```hcl
-  {{ include "ses-forwarder/main.tf" }}
+  {{ include "ses-forwarder/README.md" }}
   ``` 
   Verify Domain
   ```hcl
-  {{ include "verify-domain/main.tf" }}
+  {{ include "verify-domain/README.md" }}
   ``` 
   {{ .Providers }}
   {{ .Inputs }}
