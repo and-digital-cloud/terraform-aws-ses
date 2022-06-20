@@ -14,26 +14,10 @@ This project is maintained [AND Digital](https://github.com/and-digital), anyone
 
 ## Getting Started
 <!--- BEGIN_TF_DOCS --->
-#### SES Forwarder
-
-```
-module "ses_forwarder" {
-  source = "../../"
-
-  sender = ["email@digital.domain.com"]
-  to_email = "hello@domain.com"
-  domain_name = "digital.domain.com"
-  
-     tags = {
-    Name = "Email-Forwarder"
-  }
-
-```
-
-
 ## Providers
 
-No providers
+No provider.
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
