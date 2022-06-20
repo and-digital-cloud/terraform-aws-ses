@@ -6,18 +6,30 @@ section:
     - outputs
 
 content: |-
-  Email Verification
-  ```hcl
-  {{ include "email-verification/README.md" }}
-  ``` 
   SES Forwarder
-  ```hcl
+
+```hcl
+module "ses_forwarder" {
+  source = "../../"
+
+  sender = ["email@digital.domain.com"]
+  to_email = "hello@domain.com"
+  domain_name = "digital.domain.com"
+  
+     tags = {
+    Name = "Email-Forwarder"
+  }
+
+```
+    Email Verification
+  hcl
+  {{ include "email-verification/README.md" }}
+   
+  SES Forwarder
+  hcl
   {{ include "ses-forwarder/README.md" }}
-  ``` 
+  
   Verify Domain
-  ```hcl
+  hcl
   {{ include "verify-domain/README.md" }}
-  ``` 
-  {{ .Providers }}
-  {{ .Inputs }}
-  {{ .Outputs }}
+   
