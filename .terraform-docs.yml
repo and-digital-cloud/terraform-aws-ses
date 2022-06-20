@@ -8,7 +8,6 @@ section:
 content: |-
   SES Forwarder
 
-```hcl
 module "ses_forwarder" {
   source = "../../"
 
@@ -20,7 +19,6 @@ module "ses_forwarder" {
     Name = "Email-Forwarder"
   }
 
-```
     Email Verification
   hcl
   {{ include "email-verification/README.md" }}
