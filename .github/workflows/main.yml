@@ -19,11 +19,22 @@ jobs:
       - name: Render terraform docs inside the README.md and push changes back to PR branch
         uses: Dirrk/terraform-docs@v1.0.6
         with:
-          tf_docs_working_dir: .
+          tf_docs_working_dir: email-verification,monitoring-governance
           tf_docs_output_file: README.md
           tf_docs_output_method: inject
           tf_docs_git_push: 'true'
           tf_docs_git_commit_message: 'terraform-docs: automated action'
+    
+      - name: Render terraform docs inside the README.md and push changes back to PR branch
+        uses: terraform-docs/gh-actions@v1.0.0
+        with:
+          working-dir: . 
+          output-file: README.md
+          config-file: .terraform-docs.yml
+          output-method: inject
+          git-push: 'true'
+          git-commit-message: 'terraform-docs: automated action'
+
   build:
     runs-on: ubuntu-latest
     steps:
