@@ -6,10 +6,10 @@ section:
     - outputs
 
 content: |-
-  ## email-verification
+  # Email Verification
 
   {{ include "email-verification/README.md" }}
 
-  ## monitoring-governance
+  # Monitoring Governance
 
   {{ include "monitoring-governance/README.md" }}
