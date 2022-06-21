@@ -12,3 +12,19 @@ Part of this code is putting an policy wrap around the email, this can only happ
 ### The Terraform Work
 https://github.com/terraform-providers/terraform-provider-aws/pull/6575
 https://github.com/terraform-providers/terraform-provider-aws/pull/5128
+
+
+
+<!--- BEGIN_TF_DOCS --->
+## Providers
+
+
+
+## Inputs
+
+
+
+## Outputs
+
+
+<!--- END_TF_DOCS --->
