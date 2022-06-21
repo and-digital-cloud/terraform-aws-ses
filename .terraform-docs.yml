@@ -1,0 +1,15 @@
+formatter: "markdown table"
+section:
+  show:
+    - providers
+    - inputs
+    - outputs
+
+content: |-
+  ## email-verification
+
+  {{ include "email-verification/readme.md" }}
+
+  ## monitoring-governance
+
+  {{ include "monitoring-governance/readme.md" }}
