@@ -35,3 +35,54 @@ module "ses_forwarder" {
 Apache 2 Licensed. See [HERE](https://github.com/and-digital/terraform-aws-ses/tree/master/LICENSE) for full details.
 
 
+
+<!-- BEGIN_TF_DOCS -->
+## email-verification
+
+# Usage
+<!--- BEGIN_TF_DOCS --->
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+| null | n/a |
+| template | n/a |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:-----:|
+| aws\_profile | aws profile to run cli commands as null resource (temporary untill terraform support) | `string` | `""` | no |
+| email\_to\_verify | n/a | `list` | `[]` | no |
+
+## Outputs
+
+No output.
+<!--- END_TF_DOCS --->
+
+## monitoring-governance
+
+# Usage
+<!--- BEGIN_TF_DOCS --->
+## Providers
+
+| Name | Version |
+|------|---------|
+| archive | n/a |
+| aws | n/a |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:-----:|
+| aws\_profile | AWS Profile | `string` | `""` | no |
+| function\_name | n/a | `string` | `"suspend_email_sending_lambda"` | no |
+| notification\_email | See the attached email for a bounced message | `string` | `""` | no |
+| tags | Map of tags to assign to resources. | `map(any)` | `{}` | no |
+
+## Outputs
+
+No output.
+<!--- END_TF_DOCS --->
+<!-- END_TF_DOCS -->
